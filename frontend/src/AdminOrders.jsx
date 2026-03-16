@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from './apiConfig';
 import './App.css';
 
 const AdminOrders = () => {
@@ -15,7 +16,7 @@ const AdminOrders = () => {
             return;
         }
 
-        axios.get('http://localhost:5000/api/orders/all', {
+        axios.get(`${API_BASE_URL}/api/orders/all`, {
             headers: { 'x-auth-token': token }
         })
             .then(res => {
@@ -39,7 +40,7 @@ const AdminOrders = () => {
     const updateStatus = async (id, newStatus) => {
         const token = localStorage.getItem('adminToken');
         try {
-            await axios.put(`http://localhost:5000/api/orders/${id}/status`, { status: newStatus }, {
+            await axios.put(`${API_BASE_URL}/api/orders/${id}/status`, { status: newStatus }, {
                 headers: { 'x-auth-token': token }
             });
             fetchOrders();

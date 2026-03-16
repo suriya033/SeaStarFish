@@ -53,7 +53,7 @@ const Checkout = () => {
             totalAmount: grandTotal
         };
         try {
-            const res = await axios.post('http://localhost:5000/api/orders', orderData);
+            const res = await axios.post(`${API_BASE_URL}/api/orders`, orderData);
             clearCart();
             navigate('/order-success', { state: { orderId: res.data._id } });
         } catch (err) {

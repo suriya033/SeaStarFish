@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from './apiConfig';
 import './App.css';
 
 const EMPTY_FORM = {
@@ -35,7 +36,7 @@ const AdminProducts = () => {
     const fetchProducts = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('http://localhost:5000/api/products');
+            const res = await axios.get(`${API_BASE_URL}/api/products`);
             setProducts(res.data);
         } catch (err) { handleAuthError(err); }
         setLoading(false);
@@ -57,7 +58,7 @@ const AdminProducts = () => {
         try {
             const fd = new FormData();
             fd.append('image', file);
-            const res = await axios.post('http://localhost:5000/api/upload', fd, {
+            const res = await axios.post(`${API_BASE_URL}/api/upload`, fd, {
                 headers: {
                     'x-auth-token': token(),
                     'Content-Type': 'multipart/form-data'
@@ -86,7 +87,7 @@ const AdminProducts = () => {
         e.preventDefault();
         setSubmitMsg('');
         try {
-            await axios.post('http://localhost:5000/api/products', form, {
+            await axios.post(`${API_BASE_URL}/api/products`, form, {
                 headers: { 'x-auth-token': token() }
             });
             setShowForm(false);
@@ -104,7 +105,7 @@ const AdminProducts = () => {
     const handleDelete = async (id) => {
         if (!window.confirm('Remove this specimen from the registry?')) return;
         try {
-            await axios.delete(`http://localhost:5000/api/products/${id}`, {
+            await axios.delete(`${API_BASE_URL}/api/products/${id}`, {
                 headers: { 'x-auth-token': token() }
             });
             fetchProducts();
