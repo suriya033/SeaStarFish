@@ -1,0 +1,563 @@
+/* ═══════════════════════════════════════════════
+   SEA STAR — TRACK ORDER PAGE
+   ═══════════════════════════════════════════════ */
+
+.to-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #F5F5F3;
+    font-family: 'Outfit', sans-serif;
+}
+
+.to-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* ── HEADER ── */
+.to-header {
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid #E8E8E8;
+    height: 68px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.to-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.to-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+}
+
+.to-brand span {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.to-brand__name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #051923;
+    line-height: 1;
+}
+
+.to-brand__sub {
+    font-size: 0.57rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #AAA;
+}
+
+.to-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.to-nav__link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.25s;
+}
+
+.to-nav__link:hover {
+    color: #051923;
+}
+
+.to-nav__link--active {
+    color: #051923;
+    border-bottom: 2px solid #D4A373;
+    padding-bottom: 0.25rem;
+}
+
+/* ── BANNER ── */
+.to-banner {
+    background: linear-gradient(135deg, #051923 0%, #003554 100%);
+    padding: 4.5rem 0 6rem;
+    text-align: center;
+}
+
+.to-banner__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #D4A373;
+    margin-bottom: 1rem;
+}
+
+.to-banner__title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 400;
+    color: white;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin-bottom: 0.85rem;
+}
+
+.to-banner__sub {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
+}
+
+/* ── MAIN ── */
+.to-main {
+    margin-top: -3.5rem;
+    padding-bottom: 6rem;
+    position: relative;
+    z-index: 5;
+}
+
+.to-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+/* ── SEARCH CARD ── */
+.to-search-card {
+    background: white;
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E8E8E8;
+}
+
+.to-search__title {
+    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    color: #051923;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.to-search__form {
+    display: flex;
+    gap: 1rem;
+}
+
+.to-search__input {
+    flex: 1;
+    padding: 1.1rem 1.5rem;
+    font-size: 1.05rem;
+    font-family: 'Outfit', sans-serif;
+    border: 1.5px solid #E4E4E4;
+    border-radius: 8px;
+    background: #F8F9FA;
+    transition: all 0.25s;
+    outline: none;
+}
+
+.to-search__input:focus {
+    border-color: #051923;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(5, 25, 35, 0.08);
+}
+
+.to-search__input::placeholder {
+    color: #BBB;
+}
+
+.to-search__btn {
+    background: #051923;
+    color: white;
+    border: none;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0 2.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.to-search__btn:hover {
+    background: #003554;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.to-error {
+    margin-top: 1rem;
+    color: #E11D48;
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+/* ── STATE CARDS ── */
+.to-state-card {
+    background: white;
+    border-radius: 14px;
+    border: 1px solid #E8E8E8;
+    padding: 4rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.to-state-card--empty {
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px dashed #DCDCDC;
+}
+
+.to-state-card__icon {
+    font-size: 3rem;
+    opacity: 0.4;
+}
+
+.to-state-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #051923;
+}
+
+.to-state-card p {
+    color: #888;
+    font-size: 0.95rem;
+}
+
+.to-spinner {
+    width: 48px;
+    height: 48px;
+    border: 3px solid #E8E8E8;
+    border-top-color: #D4A373;
+    border-radius: 50%;
+    animation: toSpin 0.9s linear infinite;
+}
+
+@keyframes toSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ── ORDER CARD (Active) ── */
+.to-order-card {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid #E8E8E8;
+    overflow: hidden;
+}
+
+/* Header */
+.to-order-header {
+    background: #F8F9FA;
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid #EBEBEB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-order-header__label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.3rem;
+}
+
+.to-order-header__status {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.to-status--pending {
+    color: #C2410C;
+}
+
+.to-status--shipped {
+    color: #2563EB;
+}
+
+.to-status--delivered {
+    color: #16A34A;
+}
+
+.to-order-header__right {
+    text-align: right;
+}
+
+.to-order-header__id {
+    font-family: monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #051923;
+    letter-spacing: 1px;
+}
+
+/* Timeline */
+.to-order-timeline {
+    padding: 4rem 2.5rem;
+    border-bottom: 1px solid #EBEBEB;
+}
+
+.to-timeline__track {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.to-timeline__node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 2;
+    width: 100px;
+}
+
+.to-timeline__dot {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background: white;
+    border: 3px solid #E8E8E8;
+    color: #AAA;
+    transition: all 0.4s;
+}
+
+.to-timeline__dot.active {
+    border-color: #051923;
+    color: #051923;
+    box-shadow: 0 0 0 6px rgba(5, 25, 35, 0.06);
+}
+
+.to-timeline__dot.done {
+    background: #16a34a;
+    border-color: #16a34a;
+    color: white;
+}
+
+.to-timeline__label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #051923;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.to-timeline__label.future {
+    color: #BBB;
+}
+
+.to-timeline__connecting-lines {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    right: 50px;
+    z-index: 1;
+    display: flex;
+    height: 4px;
+    background: #E8E8E8;
+}
+
+.to-timeline__line {
+    flex: 1;
+    height: 100%;
+    transition: background 0.4s;
+}
+
+.to-timeline__line.done {
+    background: #16a34a;
+}
+
+/* Details */
+.to-order-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    padding: 3rem 2.5rem;
+}
+
+.to-details-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.to-details__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #051923;
+    border-bottom: 1px solid #E8E8E8;
+    padding-bottom: 0.75rem;
+}
+
+.to-details__card {
+    padding: 0.5rem 0;
+}
+
+.to-details__name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #051923;
+    margin-bottom: 0.5rem;
+}
+
+.to-details__address {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.to-details__card--items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.to-item-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+}
+
+.to-item-name {
+    color: #666;
+}
+
+.to-item-qty {
+    font-weight: 700;
+    color: #051923;
+}
+
+.to-items-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #EBEBEB;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.to-items-total__val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #051923;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* ── FOOTER ── */
+.to-footer {
+    background: #051923;
+    color: rgba(255, 255, 255, 0.35);
+    padding: 1.75rem 0;
+    font-size: 0.78rem;
+    margin-top: auto;
+}
+
+.to-footer__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.to-footer__link {
+    color: #D4A373;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.to-footer__link:hover {
+    opacity: 0.7;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .to-search__form {
+        flex-direction: column;
+    }
+
+    .to-search__btn {
+        padding: 1.1rem;
+    }
+
+    .to-order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .to-order-header__right {
+        text-align: left;
+    }
+
+    .to-order-details {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .to-container {
+        padding: 0 1.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .to-timeline__track {
+        max-width: 100%;
+    }
+
+    .to-timeline__node {
+        width: 70px;
+    }
+
+    .to-timeline__label {
+        font-size: 0.7rem;
+    }
+
+    .to-timeline__connecting-lines {
+        left: 35px;
+        right: 35px;
+        top: 18px;
+    }
+
+    .to-timeline__dot {
+        width: 40px;
+        height: 40px;
+    }
+}

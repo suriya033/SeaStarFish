@@ -1,0 +1,175 @@
+/* ═══════════════════════════════════════════════
+   SEA STAR — ORDER SUCCESS PAGE
+   ═══════════════════════════════════════════════ */
+
+.os-root {
+    min-height: 100vh;
+    background: #F5F5F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Outfit', sans-serif;
+}
+
+.os-card {
+    background: white;
+    padding: 5rem;
+    border-radius: 16px;
+    max-width: 680px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
+    border: 1px solid #EBEBEB;
+}
+
+.os-icon {
+    width: 96px;
+    height: 96px;
+    background: #F0FDF4;
+    color: #16A34A;
+    font-size: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2.5rem;
+    border: 2px solid #BBF7D0;
+}
+
+.os-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem;
+    font-weight: 400;
+    color: #051923;
+    margin-bottom: 2rem;
+    letter-spacing: -1px;
+}
+
+.os-tracking-block {
+    background: #F8F9FA;
+    padding: 1.75rem;
+    border-radius: 10px;
+    margin-bottom: 2.5rem;
+    border: 1.5px dashed #D0D0D0;
+}
+
+.os-tracking-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.os-tracking-id {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    color: #051923;
+    letter-spacing: 2px;
+    font-weight: 800;
+    padding: 0.5rem 0;
+    display: block;
+}
+
+.os-tracking-hint {
+    font-size: 0.82rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.os-message {
+    color: #666;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 3.5rem;
+    font-weight: 300;
+}
+
+/* Actions */
+.os-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.os-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 1.15rem 2.5rem;
+    border-radius: 7px;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+}
+
+.os-btn--primary {
+    background: #051923;
+    color: white;
+    border-color: #051923;
+}
+
+.os-btn--primary:hover {
+    background: #003554;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 25, 35, 0.25);
+}
+
+.os-btn--outline {
+    background: transparent;
+    color: #051923;
+    border-color: #D0D0D0;
+}
+
+.os-btn--outline:hover {
+    background: #F5F5F3;
+    border-color: #051923;
+}
+
+/* Footer Notes */
+.os-footer {
+    margin-top: 4.5rem;
+    border-top: 1px solid #EBEBEB;
+    padding-top: 2.5rem;
+}
+
+.os-footer-title {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.5rem;
+}
+
+.os-footer-text {
+    font-size: 0.9rem;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .os-card {
+        padding: 3rem 2rem;
+    }
+
+    .os-actions {
+        flex-direction: column;
+    }
+
+    .os-btn {
+        width: 100%;
+        min-width: 0;
+    }
+}
