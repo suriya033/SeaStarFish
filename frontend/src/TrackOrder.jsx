@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from './apiConfig';
 import './TrackOrder.css';
 
 const TrackOrder = () => {
@@ -21,7 +22,7 @@ const TrackOrder = () => {
         if (!id) return;
         setLoading(true); setError('');
         try {
-            const res = await axios.get(`http://localhost:5000/api/orders/${id}`);
+            const res = await axios.get(`${API_BASE_URL}/api/orders/${id}`);
             setOrder(res.data);
         } catch (err) {
             setError('Consignment ID not found in our registry. Please verify your 24-character ID.');

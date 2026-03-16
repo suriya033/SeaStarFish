@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from './CartContext';
+import API_BASE_URL from './apiConfig';
 import logo from './assets/logo.png';
 import './ProductDetail.css';
 
@@ -83,7 +84,7 @@ const ProductDetail = () => {
             try {
                 // Smooth loading transition
                 setLoading(true);
-                const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+                const res = await axios.get(`${API_BASE_URL}/api/products/${id}`);
                 setProduct(res.data);
                 setTimeout(() => setLoading(false), 300); // Artificial delay for smoothness
             } catch (e) {

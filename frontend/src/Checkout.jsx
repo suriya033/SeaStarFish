@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from './CartContext';
+import API_BASE_URL from './apiConfig';
 import './Checkout.css';
 
 const Checkout = () => {

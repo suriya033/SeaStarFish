@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from './apiConfig';
 import './App.css';
 
 const Login = () => {
@@ -19,7 +20,7 @@ const Login = () => {
         setError('');
         setLoading(true);
         try {
-            const res = await axios.post('http://localhost:5000/api/auth/login', formData);
+            const res = await axios.post(`${API_BASE_URL}/api/auth/login`, formData);
             if (res.data.user && res.data.user.role === 'admin') {
                 localStorage.setItem('adminToken', res.data.token);
                 localStorage.setItem('adminUser', JSON.stringify(res.data.user));

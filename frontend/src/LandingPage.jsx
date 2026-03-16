@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from './CartContext';
 import logo from './assets/logo.png';
+import API_BASE_URL from './apiConfig';
 import './LandingPage.css';
 
 // --- Premium SVG Icons ---
@@ -47,7 +48,7 @@ const LandingPage = () => {
     useEffect(() => {
         const fetchRecentProducts = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/products?sort=dateAdded');
+                const res = await axios.get(`${API_BASE_URL}/api/products?sort=dateAdded`);
                 setProducts(res.data.slice(0, 4));
             } catch (err) {
                 console.error('Failed to fetch products:', err);
@@ -76,7 +77,7 @@ const LandingPage = () => {
         e.preventDefault();
         setStatus('Submitting...');
         try {
-            const res = await fetch('http://localhost:5000/api/enquiry', {
+            const res = await fetch(`${API_BASE_URL}/api/enquiry`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)

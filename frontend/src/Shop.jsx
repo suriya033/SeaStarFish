@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useCart } from './CartContext';
+import API_BASE_URL from './apiConfig';
 import './Shop.css';
 
 const CATEGORIES = [
@@ -38,7 +39,7 @@ const Shop = () => {
             const params = new URLSearchParams();
             if (category) params.append('category', category);
             if (search) params.append('search', search);
-            const res = await axios.get(`http://localhost:5000/api/products?${params}`);
+            const res = await axios.get(`${API_BASE_URL}/api/products?${params}`);
             setProducts(res.data);
         } catch (e) { console.error(e); }
         setLoading(false);
