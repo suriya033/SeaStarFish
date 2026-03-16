@@ -85,6 +85,11 @@ app.get('/api/admin/enquiries', auth, admin, async (req, res) => {
     }
 });
 
+// Welcome route
+app.get('/', (req, res) => {
+    res.send('<h1>Sea Star Fish Aquarium - API Server</h1><p>The backend services are live and functioning correctly. Access the main store at your Vercel URL.</p>');
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
     const states = ['Disconnected', 'Connected', 'Connecting', 'Disconnecting'];
