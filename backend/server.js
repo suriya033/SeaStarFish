@@ -47,9 +47,11 @@ app.use('/api/upload', uploadRoutes);
 const seedAdmin = async () => {
     try {
         const adminEmail = 'seastarfish@gmail.com';
+        const password = 'seastartfish123';
         const existingAdmin = await User.findOne({ email: adminEmail });
+
         if (!existingAdmin) {
-            const hashedPassword = await bcrypt.hash('seastarfish123', 10);
+            const hashedPassword = await bcrypt.hash(password, 10);
             await User.create({
                 name: 'Admin',
                 email: adminEmail,
@@ -57,6 +59,12 @@ const seedAdmin = async () => {
                 role: 'admin'
             });
             console.log('✅ Admin user seeded successfully');
+        } else {
+            // Update password if user already exists to ensure it matches new request
+            const hashedPassword = await bcrypt.hash(password, 10);
+            existingAdmin.password = hashedPassword;
+            await existingAdmin.save();
+            console.log('✅ Admin credentials updated');
         }
     } catch (error) {
         console.error('❌ Error seeding admin:', error.message);
