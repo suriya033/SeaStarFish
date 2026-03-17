@@ -310,6 +310,7 @@
     outline: none;
     transition: border-color 0.25s, box-shadow 0.25s;
     -webkit-appearance: none;
+    appearance: none;
 }
 
 .co-input:focus {
