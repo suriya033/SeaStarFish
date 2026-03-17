@@ -50,7 +50,7 @@ const TrackOrder = () => {
                     <Link to="/" className="to-brand">
                         <span>🐟</span>
                         <div>
-                            <div className="to-brand__name">SeaStar</div>
+                            <div className="to-brand__name">SeaStarFish</div>
                             <div className="to-brand__sub"> </div>
                         </div>
                     </Link>

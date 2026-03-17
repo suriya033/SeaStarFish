@@ -73,7 +73,7 @@ const Checkout = () => {
                     <Link to="/" className="co-brand">
                         <span>🐟</span>
                         <div>
-                            <div className="co-brand__name">SeaStar</div>
+                            <div className="co-brand__name">SeaStarFish</div>
                             <div className="co-brand__sub"> </div>
                         </div>
                     </Link>

@@ -48,7 +48,7 @@ const Login = () => {
                 <div className="brand" style={{ justifyContent: 'center', marginBottom: '1.5rem' }}>
                     <span className="brand-icon" style={{ fontSize: '3rem' }}>🐟</span>
                     <div className="brand-text">
-                        <h1 style={{ color: 'var(--primary)', fontSize: '2rem' }}>SeaStar</h1>
+                        <h1 style={{ color: 'var(--primary)', fontSize: '2rem' }}>SeaStarFish</h1>
                         <span style={{ color: 'var(--text-light)', letterSpacing: '4px' }}>AQUARIUM</span>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const Login = () => {
                         <input
                             className="form-control"
                             type="email"
-                            placeholder="admin@seastar.com"
+                            placeholder="admin@seastarfish.com"
                             value={formData.email}
                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                             required

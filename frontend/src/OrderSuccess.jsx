@@ -25,7 +25,7 @@ const OrderSuccess = () => {
                 )}
 
                 <p className="os-message">
-                    Thank you for choosing SeaStar Aquarium. Your aquatic specimens have been reserved,
+                    Thank you for choosing SeaStarFish Aquarium. Your aquatic specimens have been reserved,
                     and our marine biologists are currently preparing them for their safe journey to your sanctuary.
                 </p>
 

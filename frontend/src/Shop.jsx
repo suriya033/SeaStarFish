@@ -69,7 +69,7 @@ const Shop = () => {
                     <Link to="/" className="shop-brand">
                         <span className="shop-brand__icon">🐟</span>
                         <div>
-                            <div className="shop-brand__name">SeaStar</div>
+                            <div className="shop-brand__name">SeaStarFish</div>
                             <div className="shop-brand__sub"> </div>
                         </div>
                     </Link>

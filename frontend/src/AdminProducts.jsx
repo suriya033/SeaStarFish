@@ -127,7 +127,7 @@ const AdminProducts = () => {
                 <div className="brand" style={{ marginBottom: '4rem' }}>
                     <span className="brand-icon">🐟</span>
                     <div className="brand-text">
-                        <h1 style={{ color: 'white' }}>SeaStar</h1>
+                        <h1 style={{ color: 'white' }}>SeaStarFish</h1>
                         <span style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '2px' }}>CONTROL PANEL</span>
                     </div>
                 </div>

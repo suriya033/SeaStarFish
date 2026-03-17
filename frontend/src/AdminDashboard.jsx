@@ -51,7 +51,7 @@ const AdminDashboard = () => {
                 <div className="brand" style={{ marginBottom: '4rem' }}>
                     <span className="brand-icon">🐟</span>
                     <div className="brand-text">
-                        <h1 style={{ color: 'white', textTransform: 'none', letterSpacing: '-1px' }}>SeaStar</h1>
+                        <h1 style={{ color: 'white', textTransform: 'none', letterSpacing: '-1px' }}>SeaStarFish</h1>
                         <span style={{ color: 'rgba(255,255,255,0.4)', letterSpacing: '4px', fontSize: '0.65rem' }}>OPERATIONS COMMAND</span>
                     </div>
                 </div>

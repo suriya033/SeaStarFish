@@ -19,7 +19,7 @@ const Cart = () => {
                     <Link to="/" className="cart-brand">
                         <span>🐟</span>
                         <div>
-                            <div className="cart-brand__name">SeaStar</div>
+                            <div className="cart-brand__name">SeaStarFish</div>
                             <div className="cart-brand__sub"> </div>
                         </div>
                     </Link>
