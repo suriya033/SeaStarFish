@@ -36,12 +36,12 @@ const Login = () => {
     };
 
     return (
-        <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, var(--primary) 0%, #1e293b 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+        <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, var(--primary) 0%, #1e293b 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}>
             {/* Subtle background particles effect placeholder */}
             <div style={{ position: 'absolute', top: '10%', left: '10%', width: '400px', height: '400px', background: 'var(--highlight)', filter: 'blur(150px)', opacity: 0.1, zIndex: 0 }}></div>
 
-            <div style={{ background: 'rgba(255, 255, 255, 0.98)', padding: '4rem', borderRadius: 'var(--radius-lg)', width: '100%', maxWidth: '480px', boxShadow: 'var(--shadow-xl)', position: 'relative', zIndex: 1, backdropFilter: 'blur(10px)' }}>
-                <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: '700', marginBottom: '3rem', textTransform: 'uppercase', letterSpacing: '1px' }}>
+            <div className="login-card" style={{ background: 'rgba(255, 255, 255, 0.98)', padding: 'clamp(1.5rem, 5vw, 4rem)', borderRadius: 'var(--radius-lg)', width: '100%', maxWidth: '480px', boxShadow: 'var(--shadow-xl)', position: 'relative', zIndex: 1, backdropFilter: 'blur(10px)' }}>
+                <Link to="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.85rem', fontWeight: '700', marginBottom: 'clamp(1.5rem, 4vw, 3rem)', textTransform: 'uppercase', letterSpacing: '1px' }}>
                     ← Back to Store
                 </Link>
 
@@ -53,7 +53,7 @@ const Login = () => {
                     </div>
                 </div>
 
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                <div style={{ textAlign: 'center', marginBottom: 'clamp(1.5rem, 4vw, 3rem)' }}>
                     <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>Central Control</h2>
                     <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>Authorized Personnel Access Systems Only.</p>
                 </div>

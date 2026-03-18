@@ -816,6 +816,11 @@ ul {
   .admin-layout {
     grid-template-columns: 1fr;
   }
+
+  .admin-sidebar {
+    padding: 1.5rem;
+    min-height: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -825,5 +830,58 @@ ul {
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .admin-main {
+    padding: 1.5rem;
+  }
+
+  .enquiry-card {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+    gap: 3rem;
+  }
+
+  .expert-stats {
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .admin-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .data-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    margin-bottom: 3rem;
   }
 }

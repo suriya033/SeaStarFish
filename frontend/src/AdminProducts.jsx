@@ -15,6 +15,7 @@ const AdminProducts = () => {
     const [loading, setLoading] = useState(true);
     const [showForm, setShowForm] = useState(false);
     const [form, setForm] = useState(EMPTY_FORM);
+    const [editingId, setEditingId] = useState(null);
     const [uploading, setUploading] = useState(false);
     const [uploadMode, setUploadMode] = useState('url'); // 'url' | 'file'
     const [previewImg, setPreviewImg] = useState('');
@@ -87,11 +88,18 @@ const AdminProducts = () => {
         e.preventDefault();
         setSubmitMsg('');
         try {
-            await axios.post(`${API_BASE_URL}/api/products`, form, {
-                headers: { 'x-auth-token': token() }
-            });
+            if (editingId) {
+                await axios.put(`${API_BASE_URL}/api/products/${editingId}`, form, {
+                    headers: { 'x-auth-token': token() }
+                });
+            } else {
+                await axios.post(`${API_BASE_URL}/api/products`, form, {
+                    headers: { 'x-auth-token': token() }
+                });
+            }
             setShowForm(false);
             setForm(EMPTY_FORM);
+            setEditingId(null);
             setPreviewImg('');
             setUploadMode('url');
             setSubmitMsg('');
@@ -100,6 +108,24 @@ const AdminProducts = () => {
             setSubmitMsg('❌ Could not save product. Please try again.');
             handleAuthError(err);
         }
+    };
+
+    const handleEdit = (product) => {
+        setForm({
+            name: product.name || '',
+            description: product.description || '',
+            price: product.price || '',
+            category: product.category || 'Fish',
+            subcategory: product.subcategory || '',
+            stock: product.stock || '',
+            images: product.images && product.images.length > 0 ? product.images : ['']
+        });
+        setEditingId(product._id);
+        setPreviewImg(product.images?.[0] || '');
+        setUploadMode(product.images?.[0] ? 'url' : 'file');
+        setSubmitMsg('');
+        setShowForm(true);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
     const handleDelete = async (id) => {
@@ -114,6 +140,7 @@ const AdminProducts = () => {
 
     const openForm = () => {
         setForm(EMPTY_FORM);
+        setEditingId(null);
         setPreviewImg('');
         setUploadMode('url');
         setSubmitMsg('');
@@ -160,9 +187,9 @@ const AdminProducts = () => {
                         padding: '3rem', marginBottom: '4rem',
                         boxShadow: 'var(--shadow-xl)', border: '1px solid var(--border)'
                     }}>
-                        <h3 style={{ marginBottom: '2rem', fontSize: '1.4rem' }}>New Registry Entry</h3>
+                        <h3 style={{ marginBottom: '2rem', fontSize: '1.4rem' }}>{editingId ? 'Edit Registry Entry' : 'New Registry Entry'}</h3>
                         <form onSubmit={handleSubmit}>
-                            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+                            <div className="admin-form-grid">
 
                                 {/* Specimen Name */}
                                 <div className="form-group">
@@ -351,7 +378,7 @@ const AdminProducts = () => {
 
                             <div style={{ display: 'flex', gap: '1rem', marginTop: '2.5rem' }}>
                                 <button type="submit" className="btn btn-primary" style={{ flex: 1 }} disabled={uploading}>
-                                    {uploading ? 'Uploading...' : 'Commit to Registry'}
+                                    {uploading ? 'Uploading...' : (editingId ? 'Update Entry' : 'Commit to Registry')}
                                 </button>
                                 <button type="button" className="btn btn-outline" style={{ flex: 1 }} onClick={() => setShowForm(false)}>
                                     Discard
@@ -406,6 +433,13 @@ const AdminProducts = () => {
                                         <td style={{ fontWeight: '800', color: 'var(--secondary)' }}>₹{p.price?.toLocaleString()}</td>
                                         <td>
                                             <div style={{ display: 'flex', gap: '0.5rem' }}>
+                                                <button
+                                                    className="btn btn-ghost btn-sm"
+                                                    style={{ color: '#003554', padding: '0.4rem 0.8rem' }}
+                                                    onClick={() => handleEdit(p)}
+                                                >
+                                                    Edit
+                                                </button>
                                                 <button
                                                     className="btn btn-ghost btn-sm"
                                                     style={{ color: '#E11D48', padding: '0.4rem 0.8rem' }}

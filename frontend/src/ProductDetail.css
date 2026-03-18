@@ -882,4 +882,18 @@
     .pd-actions-wrapper {
         padding: 1rem;
     }
+
+    .pd-info__name {
+        font-size: 1.8rem;
+    }
+
+    .pd-qty-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .pd-qty-input {
+        justify-content: space-between;
+    }
 }

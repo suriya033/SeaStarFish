@@ -593,21 +593,25 @@
     }
 
     .cart-item {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 80px 1fr auto;
         gap: 1rem;
+        padding: 1rem;
     }
 
     .cart-item__qty {
         grid-column: 2;
+        grid-row: 2;
         justify-self: start;
     }
 
     .cart-item__total {
-        grid-column: 2;
+        grid-column: 3;
+        grid-row: 2;
+        align-self: center;
     }
 
     .cart-item__remove {
-        grid-column: 1;
+        grid-column: 3;
         grid-row: 1;
         justify-self: end;
         align-self: start;
